@@ -123,14 +123,24 @@ const createPlant = (e) => {
           'Access-Control-Allow-Origin': '*',
       }})
       .then((response) => { 
-          
+        printToScreen(`Plant Name `    +      `Plant Type `      +    `Is it decorative?`);
         for(let entry in response.data){
         
-        printToScreen(JSON.stringify(response.data[entry].plantName));
+        printToScreen(JSON.stringify(response.data[entry].plantName) + `, `
+                     + JSON.stringify(response.data[entry].plantType) + `, `
+                     + JSON.stringify(response.data[entry].decorative)
+            // + response.data[entry].decorative ? `true`: `false`
+        );
        
+     
+            
+
+
       }}
     
     )
+
+    
 
      .catch((error) => printToScreen("An error has occurred - Try again"));
      }
