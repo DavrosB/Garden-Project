@@ -25,7 +25,7 @@ const DELETEID = document.querySelector("#deleteID");
 let delBTN = document.querySelector("#delBtn");
 
 
-// CREATE THE CUSTOM METHOD
+// CREATE THE CUSTOM PrintScreen METHOD
 const printToScreen = (msg) => {
     const P = document.createElement("p");
     const TEXT = document.createTextNode(msg);
@@ -36,6 +36,7 @@ const printToScreen = (msg) => {
 
 
 // CREATE plant method
+
 const createPlant = (e) => {
     e.preventDefault();
 
@@ -126,25 +127,18 @@ const createPlant = (e) => {
         printToScreen(`Plant Name `    +      `Plant Type `      +    `Is it decorative?`);
         for(let entry in response.data){
         
-        printToScreen(JSON.stringify(response.data[entry].plantName) + `, `
+        printToScreen (JSON.stringify(response.data[entry].plantName) + `, `
                      + JSON.stringify(response.data[entry].plantType) + `, `
                      + JSON.stringify(response.data[entry].decorative)
-            // + response.data[entry].decorative ? `true`: `false`
-        );
-       
-     
-            
+                     )
+           
 
-
-      }}
+     }}
     
-    )
-
-    
-
-     .catch((error) => printToScreen("An error has occurred - Try again"));
+      )
+    .catch((error) => printToScreen("An error has occurred - Try again"));
      }
-    
+ 
 
 // UPDATE METHOD
 // CREATE THE UPDATED OBJECT TO BE SENT TO THE API
@@ -153,11 +147,16 @@ const updatePlant = (e) => {
     e.preventDefault();
 
 
-// get the value from the element
-const PLANTNAME_VALUE = UPLANTNAME.value; 
-const PLANTTYPE_VALUE = UPLANTTYPE.value; 
-const DECORATIVE_VALUE = UDECORATIVE.value; 
+// get the value from the element - tried separate fields first - now applying
+// SOLID and re-using original fields. Action triggered by button
+// const PLANTNAME_VALUE = UPLANTNAME.value; 
+// const PLANTTYPE_VALUE = UPLANTTYPE.value; 
+// const DECORATIVE_VALUE = UDECORATIVE.value; 
 const UPDATEID_VALUE = Number(UPDATEID.value);
+
+const PLANTNAME_VALUE = PLANTNAME.value; 
+    const PLANTTYPE_VALUE = PLANTTYPE.value; 
+    const DECORATIVE_VALUE = DECORATIVE.value; 
 
 console.log(PLANTNAME_VALUE,PLANTTYPE_VALUE,DECORATIVE_VALUE, UPDATEID_VALUE);
 

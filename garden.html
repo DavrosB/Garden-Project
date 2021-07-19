@@ -6,51 +6,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Garden Plants</title>
+    <link rel="stylesheet" href="./garden.css" /> <!--local style sheet-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    
+
 </head>
 
 <body>
-    <h1> Garden </h1>
+    <h1> Garden Plants </h1>
+
+    <br>
 
     <!-- Input fields, submit button, output on the screen! -->
 
-    <h1>CREATE:</h1>
+    <h6>CREATE: Add/Update a plant in your garden</h6>
     <form method="POST">
-        <input type="text" id="plantName" name="plantName" placeholder="Enter the Plant Name:" />
-        <input type="text" id="plantType" name="plantType" placeholder="Enter the type of plant:" />
-        <input type="boolean" id="decorative" name="decorative" placeholder="Is it decorative? True/False" />
+        <input type="text" id="plantName" name="plantName" placeholder="Plant Name:" />
+        <input type="text" id="plantType" name="plantType" placeholder="Plant Type:" />
+        <input type="boolean" id="decorative" name="decorative" placeholder="Decorative? True/False" />
 
-        <button type="submit" id="btn" name="submit">Submit</button>
+        <button type="submit" id="btn" name="submit">Add</button>
+        <br><br>
+
     </form>
 
     <hr/>
 
-    <h1>READ</h1>
-    <button type="Print" id="readbtn" name="Print">Print List</button>
-
+   
 
     <!-- Update Method - needs the record number to be updated and the new details-->
     <!-- Will display message on screen-->
     
-    <h2>UPDATE:</h2>
+    <h6>UPDATE: Update your plants. 
+        Enter ID number , enter new details above and click "Update"</h6>
     <form method="PUT">
-        <input type="text" id="uplantName" name="uplantName" placeholder="Enter the Plant Name:" />
-        <input type="text" id="uplantType" name="uplantType" placeholder="Enter the type of plant:" />
-        <input type="boolean" id="udecorative" name="udecorative" placeholder="Is it decorative? True/False" />
-        <input type="text" id="updateID" placeholder="Enter the ID you'd like to update"/>
+     <!--   <input type="text" id="uplantName" name="uplantName" placeholder="Enter the Plant Name:" />-->
+    <!--    <input type="text" id="uplantType" name="uplantType" placeholder="Enter the type of plant:" />-->
+     <!--   <input type="boolean" id="udecorative" name="udecorative" placeholder="Is it decorative? True/False" />-->
+        <input type="text" id="updateID" placeholder="Enter ID to update"/>
         <button type="submit" id="updatebtn" name="submit">Update</button>
 
+        <br><br>
+
+     
+
     </form>
-        <div id="responsefromdb"></div>
+       
     <hr/>
 
 
 
 
-    <h2>DELETE:</h2>
+    <h6>DELETE:</h6>
 
-    <input type="number" id="deleteID" placeholder="Enter the ID you'd like to delete"/>
+    <input type="number" id="deleteID" placeholder="Enter ID to delete"/>
     <button type="submit" id="delBtn">Delete Plant</button>
 
+    
+
+    <br><br>
+    
+    <h6>READ - Print the list of all the plants in your garden</h6>
+    <button type="Print" id="readbtn" name="Print">Print plants</button>
+    <br><br><br>
 
     <div id="responsefromdb"></div>
 
@@ -59,6 +78,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="./garden.js"></script>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
 </body>
 
 </html>
